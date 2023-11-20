@@ -1,4 +1,4 @@
-import { Switch, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 // Contexts
 import AuthContextProvider from "./context/AuthContextProvider";
@@ -11,10 +11,10 @@ function App() {
   return (
     <div className="App">
       <AuthContextProvider>
-        <Switch>
-          <Route path="/chats"  component={Chats} />
-          <Route path="/"  component={Login} />
-        </Switch>
+        <Routes>
+          <Route path="/"  element={<Login />} />
+          <Route path="/chats"  element={<Chats />} />
+        </Routes>
       </AuthContextProvider>
     </div>
   );
